@@ -32,7 +32,7 @@ SELECT name FROM divisions WHERE country = 'Scotland';
 
 SELECT code FROM divisions WHERE name = 'Bundesliga';
 
-SELECT COUNT(matches) FROM matches WHERE division_code = 'D1' AND hometeam = 'Freiburg' OR hometeam = 'Freiburg';
+SELECT COUNT(matches) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');
 ```
 
 5) Find the unique names of the teams which include the word "City" in their name (as entered in the database)
@@ -40,7 +40,7 @@ SELECT COUNT(matches) FROM matches WHERE division_code = 'D1' AND hometeam = 'Fr
 ```sql
 <!-- Copy solution here -->
 
-
+SELECT DISTINCT hometeam FROM matches WHERE hometeam LIKE '%City%';
 ```
 
 6) How many different teams have played in matches recorded in a French division?
