@@ -30,7 +30,9 @@ SELECT name FROM divisions WHERE country = 'Scotland';
 ```sql
 <!-- Copy solution here -->
 
+SELECT code FROM divisions WHERE name = 'Bundesliga';
 
+SELECT COUNT(matches) FROM matches WHERE division_code = 'D1' AND hometeam = 'Freiburg' OR hometeam = 'Freiburg';
 ```
 
 5) Find the unique names of the teams which include the word "City" in their name (as entered in the database)
