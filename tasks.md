@@ -6,8 +6,7 @@ Each of the questions/tasks below can be answered using a `SELECT` query. When y
 
 ```sql
 
-SELECT COUNT(matches) FROM matches WHERE season = 2017;
-
+SELECT matches FROM matches WHERE season = 2017;
 ```
 
 2) Find all the matches featuring Barcelona.
