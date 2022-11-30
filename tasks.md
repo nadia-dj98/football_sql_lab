@@ -66,7 +66,7 @@ SELECT * from matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea')
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT code FROM divisions WHERE name = 'Eredivisie';
 
 ```
 
