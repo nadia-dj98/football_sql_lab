@@ -6,14 +6,14 @@ Each of the questions/tasks below can be answered using a `SELECT` query. When y
 
 ```sql
 
-SELECT matches FROM matches WHERE season = 2017;
+SELECT * FROM matches WHERE season = 2017;
 ```
 
 2) Find all the matches featuring Barcelona.
 
 ```sql
 <!-- Copy solution here -->
-SELECT matches FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona';
+SELECT * FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona';
 
 ```
 
@@ -32,7 +32,7 @@ SELECT name FROM divisions WHERE country = 'Scotland';
 
 SELECT code FROM divisions WHERE name = 'Bundesliga';
 
-SELECT COUNT(matches) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');
+SELECT COUNT(*) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');
 ```
 
 5) Find the unique names of the teams which include the word "City" in their name (as entered in the database)
@@ -67,6 +67,7 @@ SELECT * from matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea')
 ```sql
 <!-- Copy solution here -->
 SELECT code FROM divisions WHERE name = 'Eredivisie';
+SELECT COUNT(*) FROM matches WHERE division_code = 'N1' AND ftr = 'D' AND season BETWEEN 2010 AND 2015;
 
 ```
 
@@ -75,6 +76,8 @@ SELECT code FROM divisions WHERE name = 'Eredivisie';
 ```sql
 <!-- Copy solution here -->
 
+SELECT code FROM divisions WHERE name = 'Premier League'
+SELECT * FROM matches WHERE division_code = 'EO' ORDER BY (fthg + ftag) DESC, fthg DESC;
 
 ```
 
@@ -82,6 +85,8 @@ SELECT code FROM divisions WHERE name = 'Eredivisie';
 
 ```sql
 <!-- Copy solution here -->
+
+SELECT division_code, season, SUM(fthg), SUM(ftag) FROM matches GROUP BY division_code, season ORDER BY SUM(fthg+ftag) DESC LIMIT 1;
 
 
 ```
