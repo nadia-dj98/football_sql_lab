@@ -59,7 +59,7 @@ SELECT COUNT(DISTINCT hometeam) FROM matches WHERE division_code = 'F1' OR divis
 ```sql
 <!-- Copy solution here -->
 
-
+SELECT * from matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea') OR (hometeam = 'Swansea' AND awayteam = 'Huddersfield');
 ```
 
 8) How many draws were there in the Eredivisie between 2010 and 2015?
