@@ -21,7 +21,7 @@ SELECT matches FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelon
 
 ```sql
 <!-- Copy solution here -->
-
+SELECT name FROM divisions WHERE country = 'Scotland';
 
 ```
 
